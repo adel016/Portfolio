@@ -232,7 +232,8 @@ section {
 
 .btn-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -333,6 +334,7 @@ section {
 
 #experience {
   position: relative;
+  padding: 2rem; /* Ajout d'espacement pour améliorer l'affichage */
 }
 
 .experience-sub-title {
@@ -343,25 +345,73 @@ section {
 }
 
 .experience-details-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  display: grid; /* Système de grille */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colonnes adaptatives */
+  gap: 2rem; /* Espacement entre les éléments */
+  justify-items: center; /* Centre les éléments */
+  width: 100%; /* Largeur maximale */
+  overflow-y: auto; /* Permet le défilement si nécessaire */
+  height: auto; /* S'adapte au contenu */
+  box-sizing: border-box; /* Inclut le padding */
+}
+
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; /* Espacement entre les projets */
+  justify-items: center; /* Centre chaque projet horizontalement */
+  padding: 2rem; /* Ajoute un padding global */
+  width: 100%; /* Prend toute la largeur disponible */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
+}
+
+.project-details-container {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid rgb(163, 163, 163);
+  text-align: center;
+  max-width: 350px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.details-container {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid rgb(163, 163, 163);
+  text-align: center;
+  max-width: 350px; /* Limiter la largeur */
+  width: 100%; /* Adapte la taille à la grille */
+  box-sizing: border-box;
+}
+
+.details-container.color-container {
+  max-width: 300px; /* Limite la largeur des projets individuels */
+  width: 100%; /* Adapte la taille à la grille */
 }
 
 .article-container {
   display: flex;
-  text-align: initial;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 2.5rem;
-  justify-content: space-around;
+  flex-wrap: wrap; /* Permet d'empiler les articles si nécessaire */
+  gap: 1rem; /* Espacement entre les articles */
+  justify-content: center; /* Centre les articles */
 }
 
 article {
   display: flex;
-  width: 10rem;
-  justify-content: space-around;
+  align-items: center;
   gap: 0.5rem;
+  text-align: left; /* Aligne le texte à gauche */
+  font-size: 1rem; /* Taille de police adaptée */
 }
 
 article .icon {
@@ -371,7 +421,15 @@ article .icon {
 /* PROJECTS SECTION */
 
 #projects {
-  position: relative;
+  padding-bottom: 4rem; /* Ajoute un espace sous les projets */
+  margin-bottom: 2rem; /* Ajoute un espacement supplémentaire pour éviter tout chevauchement */
+  height: auto; /* Ajuste automatiquement la hauteur au contenu */
+}
+
+.experience-details-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajuste automatiquement les colonnes */
+  gap: 2rem; /* Ajoute de l'espace entre les projets */
 }
 
 .color-container {
@@ -380,19 +438,22 @@ article .icon {
 }
 
 .project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  width: 100%; /* Assure que les images prennent toute la largeur disponible */
+  height: auto; /* Maintient les proportions des images */
+  border-radius: 8px; /* Légère bordure arrondie pour l'esthétique */
 }
 
 .project-title {
-  margin: 1rem;
-  color: black;
+  text-align: center; /* Centrer les titres */
+  font-size: 1.2rem; /* Taille adaptée pour petits écrans */
+  margin: 0.5rem 0; /* Espacement avec les boutons */
 }
 
 .project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
+  padding: 0.75rem;
+  font-size: 1rem;
+  width: 45%;
+  border-radius: 4px;
 }
 
 /* CONTACT */
